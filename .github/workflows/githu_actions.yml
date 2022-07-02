@@ -4,10 +4,6 @@ on: [push]
 
 jobs:
   setup:
-    env:
-      PIPENV_NO_INHERIT: 1
-      PIPENV_IGNORE_VIRTUALENVS: 1
-
     # The type of runner that the job will run on
     runs-on: ubuntu-latest    
 
@@ -17,7 +13,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
+          # POSTGRES_DB: postgres
         ports: ['5432:5432']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
