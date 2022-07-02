@@ -5,16 +5,7 @@ on: [push]
 jobs:
   setup:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgresql:14.4
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports: [ '5432:5432' ]
+    runs-on: ubuntu-latest    
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -37,3 +28,12 @@ jobs:
       - name: Lint with flake8
         run: |
           pipenv run flake8 .
+
+    services:
+      postgres:
+        image: postgresql:14.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports: ['5432:5432']
