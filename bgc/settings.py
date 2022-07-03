@@ -35,7 +35,6 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Bibliotecas para collectfast
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 COLLECTFAST_STRATEGY = 'collectfast.strategies.boto3.Boto3Strategy'
-COLLECTFAST_ENABLED = False
 
 # Application definition
 INSTALLED_APPS = [
@@ -129,6 +128,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URAL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
+COLLECTFAST_ENABLED = False
 
 # Storage configuration in S3 AWS
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
